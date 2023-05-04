@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+
 struct CardView: View {
     var name: String
     var text: String
@@ -51,8 +52,6 @@ struct CardView: View {
             .background(Color.white)
             .cornerRadius(10)
             .shadow(radius: 5)
-            
-            
         }
         
         .padding([.top], 50)
@@ -65,3 +64,4 @@ struct CardView_Previews: PreviewProvider {
         CardView(name: "Sadhguru", text: "The past is memory. The future is imagination. And you are right here, right now. The past is memory. The future is imagination. And you are right here, right now.")
     }
 }
+
