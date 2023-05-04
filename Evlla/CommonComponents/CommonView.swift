@@ -9,30 +9,35 @@
 import SwiftUI
 
 // MARK: - CatagoryTitleView
+struct LeftAligned: ViewModifier {
+    func body(content: Content) -> some View {
+        HStack {
+            content
+            Spacer()
+        }
+    }
+}
+
+extension View {
+    func leftAligned() -> some View {
+        modifier(LeftAligned())
+    }
+}
+
 struct CatagoryTitleView: View {
     let title: String
     
     var body: some View {
         Text(title)
-            .font(.system(size: 20))
+            .font(.system(size: 18))
             .fontWeight(.semibold)
             .leftAligned()
             .padding(.leading, 20)
     }
 }
 
-
 // MARK: - TopImageBottomTitleGridView
 struct TopImageBottomTitleGridView: View {
-//    let icon: String?
-//    let title: String?
-//    let quotes
-//
-//
-//    init(icon: String? = nil, title: String? = nil) {
-//        self.icon = icon
-//        self.title = title
-//    }
     let catagories: [QuotesCatagory]
     @State var selectedItem: String? = nil
     
